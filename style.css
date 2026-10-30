@@ -1,0 +1,109 @@
+/* ---------- Basic reset ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Page ---------- */
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1c2030;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* ---------- Calculator body ---------- */
+.calculator {
+  width: min(92vw, 360px);   /* never wider than 360px, shrinks on small phones */
+  padding: 20px;
+  background: #272d42;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- Display screen ---------- */
+.display {
+  min-height: 110px;
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;   /* text sits at the bottom */
+  align-items: flex-end;       /* and on the right side */
+  background: #181c2b;
+  border-radius: 12px;
+  overflow: hidden;
+  word-break: break-all;       /* long numbers wrap instead of overflowing */
+}
+
+.previous {
+  min-height: 22px;
+  font-size: 1rem;
+  color: #8b93ad;
+}
+
+.current {
+  font-size: 2.4rem;
+  color: #ffffff;
+}
+
+/* ---------- Button grid: 4 equal columns ---------- */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  padding: 18px 0;
+  font-size: 1.3rem;
+  color: #ffffff;
+  background: #3a4260;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background: #4a5378;
+}
+
+button:active {
+  transform: scale(0.95);     /* small "press" effect */
+}
+
+button:focus-visible {
+  outline: 3px solid #f0b34a;
+  outline-offset: 2px;
+}
+
+/* Some buttons are twice as wide */
+.span-2 {
+  grid-column: span 2;
+}
+
+/* Different colors for different button types */
+.function {
+  background: #5a3d4a;
+}
+.function:hover {
+  background: #744f5f;
+}
+
+.operator {
+  background: #d98b2b;
+}
+.operator:hover {
+  background: #eaa044;
+}
+
+.equals {
+  background: #2f9e72;
+}
+.equals:hover {
+  background: #3bb886;
+}
